@@ -1,0 +1,36 @@
+// Enquete
+document.getElementById('enqueteForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const resposta = document.querySelector('input[name="opiniao"]:checked');
+    const sugestao = document.querySelector('input[name="sugestao"]:checked');
+    if (resposta && sugestao) {
+        alert(`Obrigado pela sua opinião: ${resposta.value}. Sugestão: ${sugestao.value}`);
+    } else {
+        alert('Por favor, selecione todas as opções!');
+    }
+});
+
+// Votação
+document.getElementById('votacaoForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const proposta = document.querySelector('input[name="proposta"]:checked');
+    if (proposta) {
+        alert(`Você votou na proposta: ${proposta.value}`);
+    } else {
+        alert('Por favor, escolha uma proposta!');
+    }
+});
+
+// Cadastro
+document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const nome = document.querySelector('input[name="nome"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const atividades = document.querySelector('textarea[name="atividades"]').value;
+
+    if (nome && email && atividades) {
+        alert(`Cadastro realizado!\nNome: ${nome}\nEmail: ${email}\nAtividades: ${atividades}`);
+    } else {
+        alert('Por favor, preencha todos os campos!');
+    }
+});
